@@ -3,16 +3,18 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    display: flex;
+    
 }
 
 .dashboard-container {
     display: flex;
+    justify-content: center;
+    min-width: 100vh;
     width: 100%;
 }
 
 aside {
-    width: 250px;
+    width: 500px;
     background: #333;
     color: white;
     padding: 20px;
@@ -44,6 +46,7 @@ main {
     flex-grow: 1;
     padding: 20px;
     background: white;
+    
 }
 
 h1 {
@@ -55,8 +58,10 @@ section {
 }
 
 .content-section {
-    display: none;
-    padding: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #4e4e4e;
 }
 
 /* Estilização da página de login */
