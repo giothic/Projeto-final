@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+}
+/* Cabeçalho do site */
+header{
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    color: white;
+    text-align: center;
+
+}
+
+/*aside (será o cabeçalho) na lateral esquerda*/
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    z-index: fixed;
+}
+
+aside {
+    width: 250px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+aside h2 {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+aside nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside nav ul li {
+    margin: 15px 0;
+}
+
+aside nav ul li a, aside a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+aside nav ul li a:hover, aside a:hover {
+    text-decoration: none;
+    background-color: #003366;
+    padding: 10px 20px 10px 20px;
+}
+aside nav ul li a:visited,
+aside a:visited {
+    color: white; /* Mantém a cor branca quando o link for visitado */
+    text-decoration: none; /* Remove sublinhado no link visitado */
+}
+
+
+/* Parte das disciplinas */
+main {
+    flex: 1;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.course-category ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.course-category ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+.course-category ul li a.active {
+    color: #ff9933;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.course-card {
+    padding: 20px;
+    color: #000000;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: block;
+}
+.course-card:hover {
+    background-color: #333;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    background-color: #003366;
+    color: #fff;
+    bottom: -100px;
+    margin-bottom: auto;
+    width: 100%;
+}
