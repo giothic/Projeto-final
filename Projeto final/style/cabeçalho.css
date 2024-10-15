@@ -1,4 +1,24 @@
+
 /* Cabeçalho do site */
+/* Botão de toggle */
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1a314a;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
+
+.toggle-button:hover {
+    background-color: #333;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -7,6 +27,7 @@
     background-color:  #003366;
     color: rgb(255, 255, 255);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 .logo {
     width: 70px;
@@ -60,3 +81,69 @@ i {
     cursor: pointer;
     font-size: 25px;
 } 
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ajust {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-left {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .toggle-button {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+
+    .nav-item {
+        margin: 0 10px;
+    }
+
+    i {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ajust {
+        font-size: 16px;
+    }
+
+    .toggle-button {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .navbar-right .icon {
+        margin-left: 10px;
+    }
+
+    i {
+        font-size: 18px;
+    }
+}

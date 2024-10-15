@@ -1,4 +1,5 @@
-/*aside (será o cabeçalho) na lateral esquerda*/
+
+/* Estilo da Dashboard */
 .dashboard-container {
     display: flex;
     min-height: 100vh;
@@ -6,57 +7,112 @@
 }
 
 aside {
-    width: 250px;
-    background:  #003366;
+    width: 200px;
+    background: #003366; /* color2 */
     color: white;
     padding: 20px;
     text-align: center;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+aside.closed {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 aside h2 {
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
 }
-nav {
+
+aside nav {
     display: flex;
     flex-direction: column;
 }
+
 .nav-link {
-    display: block; /* Faz o link ocupar toda a largura */
-    color: #ffffff; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
+    display: block;
+    color: #fff;
+    text-decoration: none;
 }
+
 .nav-link:hover {
-    color: white; /*Cor do texto ao passar o mouse*/
+    color: white;
 }
-aside h2:hover, aside a:hover {
-    transition: 0.3s ease;
-    border-radius: 5px;
-    background: linear-gradient(#0255a8, #003366);
-    padding: 2px; /* Pode ajustar conforme necessário */
-}
- aside nav ul {
+
+aside nav ul {
     list-style-type: none;
     padding: 0;
 }
 
 aside nav ul li {
-     margin: 2px 0; 
+    margin: 20px 0;
 }
 
-aside nav ul li a, aside a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-} 
-
-aside nav ul li a:hover, aside a:hover {
+aside nav ul li a:hover {
     text-decoration: none;
     padding: 7px;
+    background: linear-gradient(#003366, #0068cf); 
+
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%; /* Largura total em telas menores */
+        padding: 10px;
+        text-align: left;
+    }
+
+    aside.closed {
+        width: 0;
+        padding: 0;
+        opacity: 0;
+    }
+
+    aside h2 {
+        font-size: 18px;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+
+    aside nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-link:hover {
+        padding: 10px;
+    }
 }
 
-aside nav ul li a:visited,
-aside a:visited {
-    color: white; /* Mantém a cor branca quando o link for visitado */
-    text-decoration: none; /* Remove sublinhado no link visitado*/
+@media (max-width: 480px) {
+    aside {
+        width: 100%; /* Largura total */
+        padding: 5px;
+    }
+
+    aside h2 {
+        font-size: 16px;
+    }
+
+    aside nav ul li {
+        margin: 8px 0;
+    }
+
+    .nav-link {
+        padding: 5px;
+    }
+
+    .nav-link:hover {
+        padding: 5px;
+    }
 }
+
