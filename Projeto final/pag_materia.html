@@ -8,8 +8,14 @@
     <title>Página do AVA</title>
 </head>
 <style>
-    /* Parte das disciplinas/pagina do home*/
+/* Parte das disciplinas/pagina do home*/
 /* Estilos principais */
+.navbar-left, .navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .dashboard-container {
     display: flex;
     width: 100%;
@@ -75,9 +81,65 @@
     border-radius: 8px;
     line-height: 30px;
 }
+/* Responsividade para telas menores */
+@media (max-width: 1200px) {
+    .course-list {
+        grid-template-columns: repeat(2, 1fr); /* Ajuste para 2 colunas */
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-list {
+        grid-template-columns: 1fr; /* Ajuste para 1 coluna */
+    }
+
+    .info-section {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    header .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar-right {
+        display: none;
+    }
+
+    .img1 {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-card {
+        padding: 15px;
+    }
+
+    .course-card h3 {
+        font-size: 16px;
+    }
+    
+    .img1 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .info-section {
+        font-size: 14px;
+    }
+}
+
 </style>
     <header class="navbar">
         <div class="navbar-left">
+        <button id="toggle-aside" class="toggle-button">☰</button>
                 <img src="img/inova_tecnologia_ltda_logo.jfif" alt="Home" class="logo" />
             <span class="ucb"><h2 class="ajust">InovaTI - Instituto de Inovação em Tecnologia</h2></span>
         </div>
@@ -98,20 +160,21 @@
                 </a>
             </div>
         </div>
+        </div>
     </header>
 <body>
-    <div class="dashboard-container">
-        <aside>
-            <a href="pag_materia.html"><h2>HOME</h2></a>
-            <nav>
-                <ul>
-                    <li><a href="pag_infor.html">Informações</a></li>
-                    <li><a href="pag_nota.html">Grade Curricular/Notas</a></li>
-                    <li><a href="#biblioteca">Biblioteca</a></li>
-                    <li><a href="#libras">Libras</a></li>
-                </ul>
-            </nav>
-        </aside>
+<div class="dashboard-container">
+<aside id="sidebar" class="sidebar">
+        <nav>
+        <ul>
+            <li><a href="pag_materia.html" class="nav-link"><h2>Home</h2></a></li>
+            <li><a href="pag_infor.html" class="nav-link"><h2>Info</h2></a></li>
+            <li><a href="pag_nota.html" class="nav-link"><h2>Notas</h2></a></li>
+            <li><a href="#biblioteca" class="nav-link"><h2>Biblioteca</h2></a></li>
+            <li><a href="pag_libras.html" class="nav-link"><h2>Libras</h2></a></li>
+        </ul>
+    </nav>
+</aside>
 
             <main class="main-content">
                 <div class="course-section">
@@ -159,11 +222,11 @@
                 </div> 
             </div>
             </main>
-    
+     <script src="styles/aside.js"></script>
             <!-- <footer class="rodape_projeto">
                 <p>© 2024 InovaTI - Instituto de Inovação em Tecnologia - Todos os direitos reservados</p>
             </footer>
         -->
-   
+       
 </body>
 </html>

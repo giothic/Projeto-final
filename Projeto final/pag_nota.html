@@ -35,12 +35,16 @@ main {
     align-items: center;
     width: 100%;
 }
-
+p{
+    color: white;
+    padding: 5px;
+    margin: 6px;
+}
 .titulo {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Horizontal, Vertical, Blur, Cor */
     opacity: 0;
-    color: #003366;
-    animation: fadeIn 1s forwards;
+    color: white;
+    animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
@@ -60,22 +64,22 @@ main {
 /* Grade Curricular e Calculadora de Notas ocupando 80% da largura */
 .curriculum, .grades {
     width: 80%; /* Mantém 80% da largura */
-    background-color: #c2d8fa;
+    background-color:#003366;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
     margin: 10px auto; /* Margem em cima e embaixo, e centraliza */
 }
 
 .curriculum ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
 }
 
 .curriculum li {
     margin-bottom: 10px; /* Espaçamento entre os itens da lista */
     padding: 5px; /* Espaçamento interno opcional */
-    background-color: #e0f0ff; /* Um fundo diferente para os itens, opcional */
+    background-color: #ffffff; /* Um fundo diferente para os itens, opcional */
     border-radius: 5px; /* Bordas arredondadas, opcional */
 }
 
@@ -95,12 +99,17 @@ main {
 
 /* Ajustes nos campos de input */
 .grades label {
-    display: block; /* Exibe o label como bloco para ter controle de altura */
     margin-bottom: 5px; /* Espaçamento entre o label e o input */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Horizontal, Vertical, Blur, Cor */
+    width: 100%;
 }
 
 .grades input {
     width: 100%; /* Os inputs ocuparão a largura total do li */
+    padding: 10px;
+    height: 20px;
+
 }
 
 /* Tabela de resultados com largura total */
@@ -129,12 +138,13 @@ main {
 .grades table th, .grades table td {
     text-align: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
+    color: white;
 }
 
 button {
     padding: 10px;
-    background-color: #003366;
+    background-color: #0054a8;
     color: white;
     border: none;
     cursor: pointer;
@@ -142,7 +152,7 @@ button {
 }
 
 button:hover {
-    background-color: #005999;
+    background-color: #003458;
 }
 </style>
 
@@ -172,22 +182,22 @@ button:hover {
 </header>
 
 <div class="dashboard-container">
-<aside>
-    <a href="pag_materia.html"><h2>HOME</h2></a>
-    <nav>
-        <ul>
-            <li><a href="pag_infor.html">Informações</a></li>
-            <li><a href="pag_nota.html">Grade Curricular/Notas</a></li>
-            <li><a href="#biblioteca">Biblioteca</a></li>
-            <li><a href="#libras">Libras</a></li>
-        </ul>
-    </nav>
-</aside>
+    <aside id="sidebar" class="sidebar">
+            <nav>
+            <ul>
+                <li><a href="pag_materia.html" class="nav-link"><h2>Home</h2></a></li>
+                <li><a href="pag_infor.html" class="nav-link"><h2>Info</h2></a></li>
+                <li><a href="pag_nota.html" class="nav-link"><h2>Notas</h2></a></li>
+                <li><a href="#biblioteca" class="nav-link"><h2>Biblioteca</h2></a></li>
+                <li><a href="pag_libras.html" class="nav-link"><h2>Libras</h2></a></li>
+            </ul>
+        </nav>
+    </aside>
 <body>
 <main>
         <div class="content-area">
             <div class="banner">
-                <img src="img/log.png" alt="Banner" />
+                <img src="img/logg.jpg" alt="Banner" />
             </div>
             
         <div class="container-grd">
@@ -212,27 +222,27 @@ button:hover {
                     <ul>
                         <li>
                             <label for="nota1">Algoritmos:</label>
-                            <input type="number" id="nota1" step="0.1" min="0" max="10" required>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                         <li>
                             <label for="nota2">Cálculo I:</label>
-                            <input type="number" id="nota2" step="0.1" min="0" max="10" required>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                         <li>
                             <label for="nota3">Física I:</label>
-                            <input type="number" id="nota3" step="0.1" min="0" max="10" required>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                         <li>
                             <label for="nota4">Física II:</label>
-                            <input type="number" id="nota4" step="0.1" min="0" max="10" required>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                         <li>
-                            <label for="nota5">Física III</label>
-                            <input type="number" id="nota5" step="0.1" min="0" max="10" required>
+                            <label for="nota5">Estruturas de Dados:</label>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                         <li>
                             <label for="nota6">Sist.Oper.:</label>
-                            <input type="number" id="nota6" step="0.1" min="0" max="10" required>
+                            <input type="number" id="nota" step="0.1" min="0" max="10" required>
                         </li>
                     </ul>
                     <div style="margin-top: 10px;">
@@ -260,6 +270,7 @@ button:hover {
 </div>
 </main>
     <script src="styles/pag_nota.js"></script>
+    <script src="styles/aside.js"></script>
     <!-- <footer class="rodape_nt">
         <p>© 2024 InovaTI - Instituto de Inovação em Tecnologia - Todos os direitos reservados</p>
     </footer> -->

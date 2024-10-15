@@ -150,9 +150,137 @@ h2 {
     font-size: 16px;
     color: #333;
 }
+/* Media queries para telas menores */
+/* Responsividade para a seção de Missão, Visão, Valores e História */
+@media (max-width: 768px) {
+    .pg2 {
+        padding: 20px 15px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .instituicao-section {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .instituicao-section h3 {
+        font-size: 20px;
+    }
+
+    .instituicao-section p {
+        font-size: 14px;
+    }
+
+    .instituicao img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .visao, .valores, .historia {
+        padding: 15px;
+    }
+
+    .visao h3, .valores h3, .historia h3 {
+        font-size: 18px;
+    }
+
+    .visao p, .valores p, .historia p {
+        font-size: 14px;
+    }
+
+    /* Responsividade para a seção de Cursos Oferecidos */
+    .cursos-section {
+        margin-top: 40px;
+    }
+
+    .cursos-grid {
+        grid-template-columns: repeat(2, 1fr); /* Altera para 2 colunas */
+        gap: 15px;
+    }
+
+    .curso-box {
+        padding: 15px;
+    }
+
+    .curso-box h4 {
+        font-size: 16px;
+    }
+
+    /* Responsividade para a seção de Diferenciais */
+    .diferenciais-section {
+        padding: 30px 15px;
+        margin-top: 40px;
+    }
+
+    .diferenciais-section h3 {
+        font-size: 22px;
+    }
+
+    .diferenciais-list li {
+        padding: 10px;
+    }
+
+    .diferenciais-list li p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pg2 {
+        padding: 10px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .instituicao-section h3 {
+        font-size: 16px;
+    }
+
+    .instituicao-section p {
+        font-size: 12px;
+    }
+
+    .instituicao img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr; /* Alterado para 1 coluna */
+    }
+
+    .curso-box h4 {
+        font-size: 12px;
+    }
+
+    .diferenciais-section {
+        padding: 15px;
+    }
+
+    .diferenciais-section h3 {
+        font-size: 18px;
+    }
+
+    .diferenciais-list li {
+        padding: 10px;
+    }
+
+    .diferenciais-list li p {
+        font-size: 12px;
+    }
+}
 
 </style>
 <header class="navbar">
+    <button id="toggle-aside" class="toggle-button">☰</button>
     <div class="navbar-left">
         <img src="img/inova_tecnologia_ltda_logo.jfif" alt="Home" class="logo" />
         <span class="ucb"><h2 class="ajust">InovaTI - Instituto de Inovação em Tecnologia</h2></span>
@@ -168,16 +296,15 @@ h2 {
             <i class="fa-solid fa-bell"></i>
         </a>
 </header>
-
 <div class="dashboard-container">
-    <aside>
-        <a href="pag_materia.html"><h2>HOME</h2></a>
-        <nav>
+    <aside id="sidebar" class="sidebar">
+            <nav>
             <ul>
-                <li><a href="pag_infor.html">Informações</a></li>
-                <li><a href="pag_nota.html">Grade Curricular/Notas</a></li>
-                <li><a href="#biblioteca">Biblioteca</a></li>
-                <li><a href="#libras">Libras</a></li>
+                <li><a href="pag_materia.html" class="nav-link"><h2>Home</h2></a></li>
+                <li><a href="pag_infor.html" class="nav-link"><h2>Info</h2></a></li>
+                <li><a href="pag_nota.html" class="nav-link"><h2>Notas</h2></a></li>
+                <li><a href="#biblioteca" class="nav-link"><h2>Biblioteca</h2></a></li>
+                <li><a href="pag_libras.html" class="nav-link"><h2>Libras</h2></a></li>
             </ul>
         </nav>
     </aside>
@@ -242,7 +369,7 @@ h2 {
                 </div>
 </div>
 </main>
-        
+<script src="styles/aside.js"></script>
     <!-- <footer class="rodape_info">
         <p>© 2024 InovaTI - Instituto de Inovação em Tecnologia - Todos os direitos reservados</p>
     </footer> -->
